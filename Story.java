@@ -1,3 +1,6 @@
+import java.io.*;
+import java.net.*;
+import java.util.LinkedList;
 /**
  * класс хранящий в ссылочном приватном
  * списке информацию о последних 10 (или меньше) сообщениях
