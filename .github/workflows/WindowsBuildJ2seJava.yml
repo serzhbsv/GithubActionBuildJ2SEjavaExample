@@ -1,4 +1,4 @@
-name: Default SDK version Workflow
+name: Build java Class
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches:
 
 jobs:
-   Run_PGD_forWindows_Os:
+  Buildjava:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v4
@@ -16,11 +16,13 @@ jobs:
          distribution: 'microsoft'
          java-version: '21'
     - run: |
-            javac ./ServerSomthing.java
-            java ServerSomthing
+            javac ./Server.java
+            java ./Server
     - uses: actions/upload-artifact@v4
       with:
           name: ServerSomthing
           compression-level: 0
           path: |  
+                 Server.class
                  ServerSomthing.class
+                 Story.class
